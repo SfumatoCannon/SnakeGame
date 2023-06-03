@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SnakeGame.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GameWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PrintString.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SnakeGame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintString.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GameWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SnakeGame.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="SnakeGame.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\StateDL.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\StateUL.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\StateDR.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\StateUR.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\StateUD.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\StateLR.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\HeadD.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\HeadL.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\HeadR.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\HeadU.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\TailD.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\TailL.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\TailR.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\TailU.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\Wall.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\Trap.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\Nothing.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="Image\Food.bmp">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="score.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
