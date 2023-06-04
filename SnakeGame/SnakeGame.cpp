@@ -405,7 +405,7 @@ UINT thesnake::Move()
 
 void PrintScore()
 {
-	HFONT masterTitleFont = SetFont(32, FW_NORMAL, 0, 0, 0, L"System");
+	HFONT masterTitleFont = SetFont(32, FW_NORMAL, 0, 0, 0, L"Consolas");
 	HFONT masterTextFont = SetFont(16, FW_NORMAL, 0, 0, 0, L"Consolas");
 	SetTextColor(WindowHDC, RGB(0, 0, 0));
 	SelectObject(WindowHDC, masterTitleFont);

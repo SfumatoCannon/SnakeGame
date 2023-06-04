@@ -1,0 +1,11 @@
+﻿  SnakeGame.cpp
+C:\Users\L\Desktop\SnakeGame\SnakeGame\SnakeGame.cpp(154,65): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\L\Desktop\SnakeGame\SnakeGame\SnakeGame.cpp(155,61): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\L\Desktop\SnakeGame\SnakeGame\SnakeGame.cpp(165,65): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\L\Desktop\SnakeGame\SnakeGame\SnakeGame.cpp(166,61): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\L\Desktop\SnakeGame\SnakeGame\SnakeGame.cpp(427,65): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\L\Desktop\SnakeGame\SnakeGame\SnakeGame.cpp(428,61): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\L\Desktop\SnakeGame\SnakeGame\SnakeGame.cpp(432,65): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\L\Desktop\SnakeGame\SnakeGame\SnakeGame.cpp(433,61): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\L\Desktop\SnakeGame\SnakeGame\SnakeGame.cpp(446,43): warning C4244: “参数”: 从“__int64”转换到“int”，可能丢失数据
+  SnakeGame.vcxproj -> C:\Users\L\Desktop\SnakeGame\x64\Debug\SnakeGame.exe

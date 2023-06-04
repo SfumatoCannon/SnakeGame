@@ -1,5 +1,3 @@
-#include <cstdio>
-#include <algorithm>
 #include "File.h"
 
 long long Master[10];
@@ -7,26 +5,33 @@ long long totnum;
 
 void ReadScore()
 {
-	freopen("score.txt", "r", stdin);
-	int i;
-	scanf("%lld", &totnum);
-	totnum = totnum / 58167;
-	for (i = 0; i < totnum; i++)
+	std::ifstream ifs;
+	ifs.open("score", std::ios::binary);
+	if (!ifs.is_open())
+		return;
+	ifs.read(reinterpret_cast<char*>(&totnum), sizeof(totnum));
+	for (int i = 0; i < totnum; i++)
 	{
-		scanf("%lld", &Master[i]);
-		Master[i] = (Master[i] - 49285) / 36137;
-		Master[i] *= 10;
+		ifs.read(reinterpret_cast<char*>(&Master[i]), sizeof(Master[i]));
 	}
-	fclose(stdin);
+	ifs.close();
 }
 void WriteScoreToFile()
 {
-	freopen("score.txt", "w", stdout);
-	int i;
-	printf("%lld ", totnum * 58167);
-	for (i = 0; i < totnum; i++)
-		printf("%lld ", (Master[i] / 10) * 36137 + 49285);
-	fclose(stdout);
+	std::ofstream ofs;
+	ofs.open("score", std::ios::binary);
+	if (!ofs.is_open())
+	{
+		std::ofstream ofsForCreating("score");
+		ofsForCreating.close();
+		ofs.open("score", std::ios::binary);
+	}
+	ofs.write(reinterpret_cast<char*>(&totnum), sizeof(totnum));
+	for (int i = 0; i < totnum; i++)
+	{
+		ofs.write(reinterpret_cast<char*>(&Master[i]), sizeof(Master[i]));
+	}
+	ofs.close();
 }
 void UpdateScore(int newscore)
 {
