@@ -10,7 +10,7 @@ get the food to increase your length and score
 
 if the snake get into the wall or itself,the game will be over 
 
-if you want to reset the top score,just modify the numbers in "score.txt" to 0
+if you want to reset the top score,just delete the file "score"
 
 game by @SfumatoCannon_
 
