@@ -151,8 +151,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		SelectObject(WindowHDC, Font1);
 		SetTextColor(WindowHDC, RGB(0, 0, 0));
 		sprintf_s(str, "Score:%d       ", nowscore);
-		len = MultiByteToWideChar(CP_ACP, 0, str, strlen(str), NULL, 0);
-		MultiByteToWideChar(CP_ACP, 0, str, strlen(str), strW, len);
+		len = MultiByteToWideChar(CP_ACP, 0, str, (int)strlen(str), NULL, 0);
+		MultiByteToWideChar(CP_ACP, 0, str, (int)strlen(str), strW, len);
 		strW[len] = '\0';
 		PrintStringL(0, strW);
 		DeleteObject(Font1);
@@ -162,8 +162,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		KillTimer(hWnd, 1);
 		UpdateScore(nowscore);
 		sprintf_s(str, "GAME OVER!\nYou score is:  %d\nWould you like to try again?", nowscore);
-		len = MultiByteToWideChar(CP_ACP, 0, str, strlen(str), NULL, 0);
-		MultiByteToWideChar(CP_ACP, 0, str, strlen(str), strW, len);
+		len = MultiByteToWideChar(CP_ACP, 0, str, (int)strlen(str), NULL, 0);
+		MultiByteToWideChar(CP_ACP, 0, str, (int)strlen(str), strW, len);
 		strW[len] = '\0';
 		if (MessageBox(hWnd, strW, L"MSG", MB_YESNO) == IDNO)
 			SendMessage(hWnd, WM_DESTROY, 0, 0);
@@ -263,22 +263,22 @@ void thesnake::PrintSnake()
 			PrintBitmap(WindowHDC, StateUDBitmap, WindowXY);
 			break;
 		case StateD + StateL://9
-			if (body[i].state == StateD)
+			if (body[i].state & StateD)
 				PrintBitmap(WindowHDC, StateDRBitmap, WindowXY);
 			else PrintBitmap(WindowHDC, StateULBitmap, WindowXY);
 			break;
 		case StateD + StateR://10
-			if (body[i].state == StateD)
+			if (body[i].state & StateD)
 				PrintBitmap(WindowHDC, StateDLBitmap, WindowXY);
 			else PrintBitmap(WindowHDC, StateURBitmap, WindowXY);
 			break;
 		case StateU + StateL://5
-			if (body[i].state == StateU)
+			if (body[i].state & StateU)
 				PrintBitmap(WindowHDC, StateURBitmap, WindowXY);
 			else PrintBitmap(WindowHDC, StateDLBitmap, WindowXY);
 			break;
 		case StateU + StateR://6
-			if (body[i].state == StateU)
+			if (body[i].state & StateU)
 				PrintBitmap(WindowHDC, StateULBitmap, WindowXY);
 			else PrintBitmap(WindowHDC, StateDRBitmap, WindowXY);
 			break;
@@ -319,7 +319,7 @@ bool thesnake::GameOver()
 	bool visited[MAXX + 1][MAXY + 1];
 	memset(visited, false, sizeof(visited));
 	STRUCTXY SnakeXY = GetHeadXY();
-	if (GameMap[SnakeXY.x][SnakeXY.y] == Wall || GameMap[SnakeXY.x][SnakeXY.y] == Trap)
+	if (GameMap[SnakeXY.x][SnakeXY.y] & Wall || GameMap[SnakeXY.x][SnakeXY.y] & Trap)
 		return true;
 	for (i = 0; i < length; i++)
 	{
@@ -332,7 +332,7 @@ bool thesnake::GameOver()
 bool thesnake::CatchFood()
 {
 	STRUCTXY SnakeXY = GetHeadXY();
-	if (GameMap[SnakeXY.x][SnakeXY.y] == Food)
+	if (GameMap[SnakeXY.x][SnakeXY.y] & Food)
 		return true;
 	else return false;
 }
@@ -424,13 +424,13 @@ void PrintScore()
 		else if (i == 2) SetTextColor(WindowHDC, RGB(185, 120, 9));
 		else SetTextColor(WindowHDC, RGB(0, 0, 0));
 		sprintf_s(str, "#%d  ", i + 1);
-		len = MultiByteToWideChar(CP_ACP, 0, str, strlen(str), NULL, 0);
-		MultiByteToWideChar(CP_ACP, 0, str, strlen(str), strW, len);
+		len = MultiByteToWideChar(CP_ACP, 0, str, (int)strlen(str), NULL, 0);
+		MultiByteToWideChar(CP_ACP, 0, str, (int)strlen(str), strW, len);
 		strW[len] = '\0';
 		PrintStringXY(LEFTDIS + MAXX * 32 + 20, 96 + i * 32, strW);
 		sprintf_s(str, "%lld", Master[i]);
-		len = MultiByteToWideChar(CP_ACP, 0, str, strlen(str), NULL, 0);
-		MultiByteToWideChar(CP_ACP, 0, str, strlen(str), strW, len);
+		len = MultiByteToWideChar(CP_ACP, 0, str, (int)strlen(str), NULL, 0);
+		MultiByteToWideChar(CP_ACP, 0, str, (int)strlen(str), strW, len);
 		strW[len] = '\0';
 		long long x = Master[i], temp = 0;
 		if (x == 0)
@@ -443,7 +443,7 @@ void PrintScore()
 				x /= 10;
 			}
 		}
-		PrintStringXY(LEFTDIS + MAXX * 32 + 220 - 8 * (temp - 1), 96 + i * 32, strW);
+		PrintStringXY(LEFTDIS + MAXX * 32 + 220 - 8 * ((int)temp - 1), 96 + i * 32, strW);
 	}
 	DeleteObject(masterTextFont);
 }

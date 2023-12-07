@@ -3,26 +3,26 @@
 
 void PrintStringXY(int x, int y, LPCWSTR string)
 {
-	TextOutW(WindowHDC, x, y, string, wcslen(string));
+	TextOutW(WindowHDC, x, y, string, (int)wcslen(string));
 }
 
 void PrintStringL(int y, LPCWSTR string)
 {
-	TextOutW(WindowHDC, 0, y, string, wcslen(string));
+	TextOutW(WindowHDC, 0, y, string, (int)wcslen(string));
 }
 
 void PrintStringR(int y, LPCWSTR string)
 {
 	SIZE size;
-	GetTextExtentPoint32W(WindowHDC, string, wcslen(string), &size);
-	TextOutW(WindowHDC, WINDOWWIDTH - size.cx, y, string, wcslen(string));
+	GetTextExtentPoint32W(WindowHDC, string, (int)wcslen(string), &size);
+	TextOutW(WindowHDC, WINDOWWIDTH - size.cx, y, string, (int)wcslen(string));
 }
 
 void PrintStringM(int y, LPCWSTR string)
 {
 	SIZE size;
-	GetTextExtentPoint32W(WindowHDC, string, wcslen(string), &size);
-	TextOutW(WindowHDC, (WINDOWWIDTH - size.cx) / 2, y, string, wcslen(string));
+	GetTextExtentPoint32W(WindowHDC, string, (int)wcslen(string), &size);
+	TextOutW(WindowHDC, (WINDOWWIDTH - size.cx) / 2, y, string, (int)wcslen(string));
 }
 
 HFONT SetFont(int size, int cWeight, DWORD bItalic,

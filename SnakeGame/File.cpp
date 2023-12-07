@@ -38,7 +38,6 @@ void UpdateScore(int newscore)
 	if (newscore == 0)
 		return;
 	long long realscore = (long long)newscore;
-	int i;
 	if (totnum < 10)
 	{
 		totnum++;
